@@ -1,0 +1,11 @@
+{
+	"name": "react",
+	"version": "1.0.0",
+	"module": "index.ts",
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"shared": "workspace:*"
+	},
+	"description": "react common funtion"
+}

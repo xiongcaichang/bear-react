@@ -8,15 +8,17 @@ export default [
 	{
 		files: ['**/*.{js,mjs,cjs,ts}'],
 		languageOptions: {
-			globals: globals.browser,
+			globals: { ...globals.browser, ...globals.node },
+			sourceType: 'module',
 			parser: parser
 		},
 		plugins: {
 			'@typescript-eslint': tseslint
 		},
+
 		rules: {
 			'no-unused-vars': [
-				'error',
+				'warn',
 				{
 					vars: 'all',
 					args: 'after-used',
@@ -27,7 +29,7 @@ export default [
 			],
 			'no-console': 'warn',
 			quotes: ['error', 'single'],
-			'@typescript-eslint/no-unused-vars': 'error'
+			'@typescript-eslint/no-unused-vars': 'warn'
 		}
 	}
 ];
